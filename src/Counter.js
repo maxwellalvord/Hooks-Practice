@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Counter() {
-
   const [counter, setCounter] = useState(0);
   const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    console.log("effect!");
+    document.title = counter;
+  }, [counter]);
 
   return (
     <React.Fragment>
@@ -13,4 +17,5 @@ function Counter() {
     </React.Fragment>
   );
 }
+
 export default Counter;
